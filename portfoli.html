@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohammad Shazzad</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ff0000;
+      animation: changeBackgroundColor 8s infinite alternate;
+    }
+    @keyframes changeBackgroundColor {
+      0% { background-color: #ff0000; }
+      50% { background-color: #0000ff; }
+      100% { background-color: #000000; }
+    }
+    header {
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #333;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      padding: 50px 20px;
+      position: relative;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .name-container {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 36px;
+      position: relative;
+    }
+    .name-container span {
+      display: inline-block;
+      color: #ffcc00; /* Changed color to bright yellow */
+      transition: transform 0.5s ease-in-out;
+    }
+    .name-container span:hover {
+      transform: rotateY(180deg);
+    }
+    .name-container span::before {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: #ff0000;
+      background: linear-gradient(45deg, #ff0000, #0000ff, #000000, #ff0000);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-text-fill-color: transparent;
+      animation: textAnimation 8s infinite;
+    }
+    @keyframes textAnimation {
+      0%, 100% { background-position: 0 0; }
+      50% { background-position: 100% 100%; }
+    }
+    .spark {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #fff;
+      animation: sparkAnimation 5s infinite linear;
+    }
+    @keyframes sparkAnimation {
+      0% { opacity: 0; }
+      5% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    .spark-red {
+      top: -10px;
+      left: -10px;
+      background-color: #ff0000;
+    }
+    .spark-blue {
+      top: -10px;
+      left: calc(50% - 5px);
+      background-color: #0000ff;
+    }
+    .spark-black {
+      top: -10px;
+      right: -10px;
+      background-color: #000000;
+    }
+    .card {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 2px;
+      background: linear-gradient(45deg, #ff0000, #0000ff, #000000, #ff0000);
+      animation: moveLine 8s infinite linear;
+    }
+    @keyframes moveLine {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+    .photo-container {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .photo {
+      border-radius: 50%;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border: 10px solid #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    .btn {
+      background-color: #ff0000;
+      color: #fff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #cc0000;
+    }
+
+    /* Styling for skill, education background, experience, and contact sections */
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+    .section-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .section-content .card {
+      flex: 0 0 calc(33.3333% - 20px);
+      margin: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .section-content .card h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+    .section-content .card p {
+      margin-bottom: 0;
+    }
+    .section-content .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+      .section-content .card {
+        flex: 0 0 calc(50% - 20px);
+      }
+    }
+    @media (max-width: 480px) {
+      .section-content .card {
+        flex: 0 0 calc(100% - 20px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome</h1>
+  </header>
+
+  <section class="photo-container">
+    <img class="photo" src="sha.jpg" alt="Your Photo">
+  </section>
+
+  <section class="name-container">
+    <span data-text="Mohammad Shazzad">Mohammad Shazzad</span>
+  </section>
+
+  <section class="education">
+    <div class="spark spark-red"></div>
+    <div class="spark spark-blue"></div>
+    <div class="spark spark-black"></div>
+    <div class="container">
+      <h2 class="section-title">Education Background</h2>
+      <div class="section-content">
+        <div class="card">
+          <h3>HighSchool/College name Name</h3>
+          <P>
+          <p>Lakshmipur Adarsha Samad Government High School.</p><br>
+            <p>Group: Science</p>
+            <p>GPA:5.00</p>
+            <p>Year of Graduation:2023</p>
+
+            <p>Lakshmipur Government College</p>
+            <p>Group: Science</p>
+            <p>GPA:?</p>
+            <p>Year of Graduation:2025</p>
+        </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills">
+    <div class="spark spark-red"></div>
+    <div class="spark spark-blue"></div>
+    <div class="spark spark-black"></div>
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="section-content">
+        <div class="card">
+          <h3>Programming Languages</h3>
+          <p>HTML, CSS, JavaScript, Python</p>
+        </div>
+        <div class="card">
+          <h3>Frameworks</h3>
+          <p>React, Vue.js, Django</p>
+        </div>
+        <div class="card">
+          <h3>Other Skills</h3>
+          <p>UI/UX Design, Git, SQL</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience">
+    <div class="spark spark-red"></div>
+    <div class="spark spark-blue"></div>
+    <div class="spark spark-black"></div>
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="section-content">
+        <div class="card">
+          <h3>Company Name</h3>
+          <p>
+            <p>Self-employee</p>
+            <p>Position: Tutor</p>
+          <p>Duration: January 2021 - Present</p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="spark spark-red"></div>
+    <div class="spark spark-blue"></div>
+    <div class="spark spark-black"></div>
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      <div class="section-content">
+        <div class="card">
+          <p>Feel free to get in touch!</p>
+          <button class="btn">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
